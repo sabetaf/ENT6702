@@ -1,0 +1,50 @@
+---
+title: "EPP 8273 Empirical Research in Theory and Practice: Sabet Activity 1"
+subtitle: "R Activity 1"
+author: "Afsoon Sabet"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.pos = "!H",  fig.width=5, fig.height=3,
+                      echo=TRUE, eval=TRUE)
+# r setup = r setup # (see at top of chunk) this is just the name of this chunk. Each chunk within a script needs a unique name
+# include = FALSE # prevents code and the associated results from appearing in the finished output file (e.g., PDF). R Markdown still runs the code in the chunk, and the results can be used by other chunks.
+# NOTE: all of these options could be changed chunk by chunk...but I am specifying global options here (i.e., applied to all chunks) using "opts_chunk$set"
+# fig.pos = "!H" # prevents the figures from "floating" (moving into weird locations as R tries to organize the output file)
+# fig.width, fig.height # size of figures in inches
+# echo = FALSE prevents code, but not the output, from appearing in the finished file. This is a useful way to embed figures.
+# eval = TRUE # run the code in the chunks
+```
+
+\vspace{12pt}
+@. Question 1
+    ```{r Question 1}
+iris_df_csv <-read.table(file="assignments/Activity_2/Iris_data_text_file.txt", header=TRUE, sep="\t", na.strings = ".")
+    ```
+
+@. Question 2
+    ```{r Question 2}
+summary(iris_df_csv)
+nrow(iris_df_csv)
+    ```
+There are 118 rows in this dataframe. I used both summary and nrow to find this number.
+
+
+@. Question 3
+    ```{r Question 3}
+summary(iris_df_csv)
+sum(is.na(iris_df_csv$Species))
+```
+Using summary(), I can see that there are 2 NAs in the Sepal.Length column, 4 in Sepal.Width, 2 in Petal.Length, and 2 in Petal.Width. I confirmed that there were 0 NAs in Species using the is.na() function. 
+
+
+@. Question 4
+    ```{r Question 4}
+print(head(iris_df_csv, n=10))
+    ```
+
+@. Question 5
+    ```{r Question 5}
+print(tail(iris_df_csv, n=3))
+    ```
